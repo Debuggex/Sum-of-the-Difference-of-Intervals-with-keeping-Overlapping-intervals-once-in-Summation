@@ -36,6 +36,7 @@ public class Main {
 
             if (IntervalArray[i+1][1]==last+1) {
                 Sum=Sum+(IntervalArray[i+1][1]-first);
+                i++;
             }else if (IntervalArray[i+1][1]==last-1) {
                 Sum=Sum+(last-IntervalArray[i+1][0]);
             }else{
