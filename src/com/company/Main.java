@@ -30,18 +30,20 @@ public class Main {
         will do this in this way : Difference = 6-1. 6 From Second Interval group and 1 from First Interval Group.
 
         */
-        for (int i = 0; i < IntervalArray.length-1; i++) {
+        for (int i = 0; i < IntervalArray.length; i++) {
             int first=IntervalArray[i][0];
             int last=IntervalArray[i][1];
 
-            if (IntervalArray[i+1][1]==last+1) {
-                Sum=Sum+(IntervalArray[i+1][1]-first);
-                i++;
-            }else if (IntervalArray[i+1][1]==last-1) {
-                Sum=Sum+(last-IntervalArray[i+1][0]);
-            }else{
-                Sum=Sum+last-first;
+            if(i!=IntervalArray.length-1){
+                if (IntervalArray[i+1][1]==last+1) {
+                    Sum=Sum+(IntervalArray[i+1][1]-first);
+                    i++;
+                    continue;
+                }
             }
+
+                Sum=Sum+(last-first);
+
         }
 
         //Return Final Output
@@ -52,10 +54,9 @@ public class Main {
 
         //Creating and Initializing Random Jagged Array
         int arr_name[][] = new int[][]  {
-                new int[] {50, 60},
-                new int[] {10,20},
-                new int[] {110, 120},
-                new int[] {10,20}
+                new int[] {1, 4},
+                new int[] {7,10},
+                new int[] {2, 5}
         };
 
         //Calling the Function and Printing the Output to Console.
